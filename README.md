@@ -45,7 +45,8 @@ Next, pull down the latest version of the bundle published by this repository by
 ```circup bundle-add sparkfun/Qwiic_SerLCD_Circup_Bundle```
 
 Finally, install the relevant library files to your device with: 
-```circup install qwiic_serlcd```
+
+```circup install --py qwiic_serlcd```
 
 ## Updating
 To update this bundle:
