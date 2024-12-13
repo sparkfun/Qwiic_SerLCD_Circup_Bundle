@@ -35,25 +35,24 @@ Qwiic_SerLCD_CircupBundle NOTE: CURRENTLY STILL IN DEVELOPMENT!
 ## Overview
 This bundle provides the library [Qwiic_SerLCD_Py](https://github.com/sparkfun/Qwiic_SerLCD_Py): Python module for I2C control of the SparkFun Qwiic Serial LCDs.
 
-This bundling repository is a hard fork of the [CircuitPython Community Bundle](https://github.com/adafruit/CircuitPython_Community_Bundle/tree/main/libraries) and uses their build scripts to generate and release the bundle.
+This bundling repository is a hard fork of the [CircuitPython Community Bundle](https://github.com/adafruit/CircuitPython_Community_Bundle/tree/main/libraries) and uses their workflows to generate and release the bundle.
+
+## Usage
+Follow the instructions [here](https://learn.adafruit.com/keep-your-circuitpython-libraries-on-devices-up-to-date-with-circup/overview) to install circup. 
+
+Next, pull down the latest version of the bundle published by this repository by executing the following in a command prompt: 
+
+```circup bundle-add sparkfun/Qwiic_SerLCD_Circup_Bundle```
+
+Finally, install the relevant library files to your device with: 
+```circup install qwiic_serlcd```
 
 ## Updating
-To update this bundle, publish a release/tag in the [Qwiic_SerLCD_Py](https://github.com/sparkfun/Qwiic_SerLCD_Py) repo and then run the update-submodules.sh script in this repository locally and then push.
+To update this bundle:
+
+1) Publish a release/tag in the [Qwiic_SerLCD_Py](https://github.com/sparkfun/Qwiic_SerLCD_Py) repo. 
+2) Manually update the necessary library submoudules of this repository to point to that new tag, or run the update-submodules.sh locally and then push to this repository. 
+3) Create a new tag/release for this repository. This will trigger a workflow to publish the necessary circup artifacts.
 
 ## Building
-This bundle will be automatically built and released by GithHub workflows when you push to this repository. To build it locally: 
-
-To build this bundle locally you'll need to install the
-`circuitpython-build-tools <https://github.com/adafruit/circuitpython-build-tools>`_ package.
-
-    python3 -m venv .env
-    source .env/bin/activate
-    pip install circuitpython-build-tools
-
-Once installed, make sure you are in the virtual environment:
-
-    source .env/bin/activate
-
-Then run the build:
-
-    ./build.sh
+This bundle will be automatically built and released by GithHub workflows when a new tag is created in this repo.
