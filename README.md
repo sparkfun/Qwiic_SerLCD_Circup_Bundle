@@ -1,61 +1,48 @@
-# CircuitPython Community Library Bundle
+Qwiic_SerLCD_CircupBundle NOTE: CURRENTLY STILL IN DEVELOPMENT!
+==============
 
-[![Doc Status](https://readthedocs.org/projects/circuitpython/badge/?version=latest)](https://circuitpython.readthedocs.io/en/latest/docs/drivers.html) [![Discord](https://img.shields.io/discord/327254708534116352.svg)](https://adafru.it/discord)
+<p align="center">
+   <img src="https://cdn.sparkfun.com/assets/custom_pages/2/7/2/qwiic-logo-registered.jpg"  width=200>  
+   <img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM.png"  width=240>   
+</p>
+<p align="center">
+	<a href="https://pypi.org/project/sparkfun-qwiic-serlcd/" alt="Package">
+		<img src="https://img.shields.io/pypi/pyversions/sparkfun_qwiic_serlcd.svg" /></a>
+	<a href="https://github.com/sparkfun/Qwiic_SerLCD_Py/issues" alt="Issues">
+		<img src="https://img.shields.io/github/issues/sparkfun/Qwiic_SerLCD_Py.svg" /></a>
+	<a href="https://qwiic-serlcd-py.readthedocs.io/en/latest/" alt="Documentation">
+		<img src="https://readthedocs.org/projects/qwiic-serlcd-py/badge/?version=latest&style=flat" /></a>
+	<a href="https://github.com/sparkfun/Qwiic_SerLCD_Py/blob/master/LICENSE" alt="License">
+		<img src="https://img.shields.io/badge/license-MIT-blue.svg" /></a>
+	<a href="https://twitter.com/intent/follow?screen_name=sparkfun">
+        	<img src="https://img.shields.io/twitter/follow/sparkfun.svg?style=social&logo=twitter"
+           	 alt="follow on Twitter"></a>
+</p>
 
-![Blinka Community](https://github.com/adafruit/CircuitPython_Community_Bundle/blob/main/adafruit_circuitpython_community_bundle_100_large.png)
+<table class="table table-hover table-striped table-bordered">
+    <tr align="center">
+        <td><a href="https://www.sparkfun.com/products/16396"><img src="https://cdn.sparkfun.com//assets/parts/1/5/1/2/2/16396-SparkFun_16x2_SerLCD_-_RGB_Backlight__Qwiic_-05.jpg" title="SparkFun SerLCD 16x2 - RGB Backlight (QWIIC)"></a></td>
+        <td><a href="https://www.sparkfun.com/products/16397"><img src="https://cdn.sparkfun.com//assets/parts/1/5/1/2/3/16397-SparkFun_16x2_SerLCD_-_RGB_Backlight__Qwiic_-05.jpg" title="SparkFun SerLCD 16x2 - RGB Text (QWIIC)"></a></td>
+        <td><a href="https://www.sparkfun.com/products/16398"><img src="https://cdn.sparkfun.com//assets/parts/1/5/1/2/4/16398-SparkFun_16x2_SerLCD_-_RGB_Backlight__Qwiic_-05.jpg" title="SparkFun SerLCD 20x2 - RGB Backlight (QWIIC)"></a></td>
+    </tr>
+    <tr align="center">
+        <td><i><a href="https://www.sparkfun.com/products/16396">SparkFun SerLCD 16x2 - RGB Backlight (QWIIC)</a></i></td>
+        <td><i><a href="https://www.sparkfun.com/products/16397">SparkFun SerLCD 16x2 - RGB Text (QWIIC)</a></i></td>
+        <td><i><a href="https://www.sparkfun.com/products/16398">SparkFun SerLCD 20x2 - RGB Backlight (QWIIC)</a></i></td>
+    </tr>
+</table>
 
-This repo bundles a bunch of useful CircuitPython libraries into an easy to
-download zip file. CircuitPython boards can ship with the contents of the zip to
-make it easy to provide a lot of libraries by default.
+## Overview
+This bundle provides the library [Qwiic_SerLCD_Py](https://github.com/sparkfun/Qwiic_SerLCD_Py): Python module for I2C control of the SparkFun Qwiic Serial LCDs.
 
-# License
-Each included library has its own license that must allow for redistribution. To
-save space, license text is not included in the bundle. However, a link to each
-individual repository is which should provide source code access and license
-information.
+This bundling repository is a hard fork of the [CircuitPython Community Bundle](https://github.com/adafruit/CircuitPython_Community_Bundle/tree/main/libraries) and uses their build scripts to generate and release the bundle.
 
-# Use
-To use the bundle download the zip (not source zip) from the
-[latest release](https://github.com/adafruit/CircuitPython_Community_Bundle/releases/latest),
-unzip it and copy over the subfolders, such as `lib`, into the root of your
-CircuitPython device. Make sure to indicate that it should be merged with the
-existing folder when it exists.
+## Updating
+To update this bundle, publish a release/tag in the [Qwiic_SerLCD_Py](https://github.com/sparkfun/Qwiic_SerLCD_Py) repo and then run the update-submodules.sh script in this repository locally and then push.
 
-# Development
+## Building
+This bundle will be automatically built and released by GithHub workflows when you push to this repository. To build it locally: 
 
-After you clone this repository you must run `git submodule init` on update
-also do `git submodule update`.
-
-## Updating libraries
-To update the libraries run `update-submodules.sh`. The script will fetch the
-latest code and update to the newest tag (not master).
-
-## Adding a library
-Determine the best location within `libraries` for the new library and then run:
-
-    git submodule add <git url> libraries/<target directory>
-
-The target directory should omit any MicroPython or CircuitPython specific
-prefixes such as `CircuitPython_` to simplify the listing.
-
-You should make sure that the git url has the format `https://github.com/{:user}/{:repo}.git`,
-such as `https://github.com/tannewt/CircuitPython_Example.git`.  Other forms may interfere with
-adabot scripts (see https://github.com/adafruit/adabot/issues/145 for details).
-
-The repository must have a tag, as the bundle release process pulls the latest tag, usually
-matching a release of your library. The tag must follow the Semver format (such as *1.2.3*).
-
-The [circuitpython_community_library_list.md](circuitpython_community_library_list.md) page is
-manually updated. Please add your library to the list with the relevant links to the repository,
-pypi page and documentation if available.
-
-## Removing a library
-Only do this if you are replacing the module with an equivalent:
-
-    git submodule deinit libraries/<target directory>
-    git rm libraries/<target directory>
-
-## Building the bundle
 To build this bundle locally you'll need to install the
 `circuitpython-build-tools <https://github.com/adafruit/circuitpython-build-tools>`_ package.
 
